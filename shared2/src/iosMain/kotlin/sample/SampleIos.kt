@@ -24,4 +24,3 @@ actual open class BaseViewModel actual constructor() {
 
     }
 }
-

@@ -4,8 +4,6 @@ import io.ktor.client.HttpClient
 import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.request.get
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.async
-import kotlinx.coroutines.channels.ConflatedBroadcastChannel
 import kotlinx.coroutines.launch
 import kotlin.native.concurrent.ThreadLocal
 
