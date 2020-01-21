@@ -4,6 +4,7 @@ import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.engine.ios.Ios
 import kotlinx.coroutines.*
 
+
 actual fun getEngine(): HttpClientEngine = Ios.create()
 
 actual open class BaseViewModel actual constructor() {
@@ -18,9 +19,7 @@ actual open class BaseViewModel actual constructor() {
 
     object IosMainDispatcher : CoroutineDispatcher() {
         override fun dispatch(context: kotlin.coroutines.CoroutineContext, block: Runnable) {
-
+//            dispatch_async(dispatch_get_main_queue()) { block.run() }
         }
-
-
     }
 }
