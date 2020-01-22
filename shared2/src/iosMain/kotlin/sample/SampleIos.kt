@@ -3,6 +3,8 @@ package sample
 import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.engine.ios.Ios
 import kotlinx.coroutines.*
+import platform.darwin.dispatch_async
+import platform.darwin.dispatch_get_main_queue
 
 
 actual fun getEngine(): HttpClientEngine = Ios.create()
@@ -19,7 +21,7 @@ actual open class BaseViewModel actual constructor() {
 
     object IosMainDispatcher : CoroutineDispatcher() {
         override fun dispatch(context: kotlin.coroutines.CoroutineContext, block: Runnable) {
-//            dispatch_async(dispatch_get_main_queue()) { block.run() }
+            dispatch_async(dispatch_get_main_queue()) { block.run() }
         }
     }
 }
